@@ -1,0 +1,40 @@
+Here you will take your notes
+Client server model(starts the communication)
+Client send a request to the server and the server response to the request
+The problem starts when the client send a request and there is no server to attend it, it's like something you can't buy
+First activate the service
+You can have one computer running two programms
+We are going to try to communicate comkputers separated physically
+There is no wire to communicate both programms
+
+Concepts we need
+Inside the Internet there are many computers divided in groups called networks
+All the computers have networks interface, the IP address refers to the network interface, so one computer can have more
+than one IP address
+
+My phone IP address at URJC is: 10.0.40.225
+Check again at home my IP address and write it down:
+Teacher's IP: 212.128.253.64
+
+My IP from my computer is: 212.128.253.91
+
+
+There is a command called ping to ask the computer if the it is alive ping 8.8.8.8
+* ping time to 8.8.8.8
+
+time = 3.54ms
+
+*Ping time to my computer: time = 0.023 ms (23 us)
+
+Ping time of Lucia's computer is 0.02 ms
+
+My ping time of my mobile phone: time = 72.8 ms
+
+URL : use for identify a computer
+
+*Ping to www.google.com : (216.58.211.228)
+
+*Ping to urjc.es: (212.128.240.50)
+
+Port number where is located the server
+THIS IS A TEXT EXAMPLE OF ADDING TO MY FILETHIS IS A TEXT EXAMPLE OF ADDING TO MY FILE
