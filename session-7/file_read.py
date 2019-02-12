@@ -14,4 +14,3 @@ print("The file contents are: {}".format(contents))
 
 myfile.close()
 
-#
