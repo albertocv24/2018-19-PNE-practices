@@ -7,13 +7,13 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 print("Socket created")
 
-PORT = 8080
+PORT = 8083
 IP = "212.128.253.64"
 
 # Connect to the server
 s.connect((IP, PORT))
 
-s.send(str.encode("HELLO FROM MY CLIENT"))
+s.send(str.encode("BASI"))
 
 msg = s.recv(2048).decode("utf-8")
 print("MESSAGE FORM THE SERVER: ")
@@ -32,13 +32,13 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 print("Socket created")
 
-PORT = 8080
+PORT = 8083
 IP = "212.128.253.64"
 
 # Connect to the server
 s.connect((IP, PORT))
 
-s.send(str.encode("HELLO FROM MY CLIENT"))
+s.send(str.encode("BASI"))
 
 msg = s.recv(2048).decode("utf-8")
 print("MESSAGE FORM THE SERVER: ")
