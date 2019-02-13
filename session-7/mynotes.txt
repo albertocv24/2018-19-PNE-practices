@@ -38,3 +38,11 @@ URL : use for identify a computer
 
 Port number where is located the server
 THIS IS A TEXT EXAMPLE OF ADDING TO MY FILETHIS IS A TEXT EXAMPLE OF ADDING TO MY FILE
+
+
+
+> TACG
+s1(seq)
+s2 = s1.reverse()
+s3 = s2.complement()
+s3.strbase ---> server
