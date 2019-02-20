@@ -1,8 +1,8 @@
 import socket
 
 # SERVER IP, PORT
-IP = "212.128.253.91"
-PORT = 8080
+IP = "127.0.0.1"
+PORT = 8081
 
 while True:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
