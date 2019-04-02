@@ -26,8 +26,8 @@ while True:
     s.send(str.encode(data))
     s.close()
 
-msg= s.recv(2048).decode('utf-8')
-print('message from the server: ')
-print(msg)
+    msg= s.recv(2048).decode('utf-8')
+    print('message from the server: ')
+    print(msg)
 
-print('the end')
+    print('the end')
