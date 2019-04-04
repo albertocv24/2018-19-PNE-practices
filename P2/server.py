@@ -1,9 +1,10 @@
 import socket
+from Seqp2 import Seq
 
 # Configure the Server's IP and PORT
-PORT = 8080
-IP = "212.128.253.91"
-MAX_OPEN_REQUESTS = 5
+PORT = 8081
+IP = "127.0.0.1"
+MAX_OPEN_REQUESTS = 5000
 
 # Counting the number of connections
 number_con = 0
@@ -15,9 +16,10 @@ try:
     # become a server socket
     # MAX_OPEN_REQUESTS connect requests before refusing outside connections
     serversocket.listen(MAX_OPEN_REQUESTS)
-    print("Waiting for connections at {}, {} ".format(IP, PORT))
+
     while True:
         # accept connections from outside
+        print("Waiting for connections at {}, {} ".format(IP, PORT))
         (clientsocket, address) = serversocket.accept()
 
         # Another connection!e
@@ -30,7 +32,9 @@ try:
         msg = clientsocket.recv(2048).decode("utf-8")
         print("Message from client: {}".format(msg))
 
-        # Send the messag
+        s = Seq(msg)
+
+        # Send the message
         message = "Hello from the teacher's server"
         send_bytes = str.encode(message)
         # We must write bytes, not a string
@@ -42,4 +46,4 @@ except socket.error:
 
 except KeyboardInterrupt:
     print("Server stopped by the user")
-serversocket.close()
+    serversocket.close()
