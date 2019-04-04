@@ -1,8 +1,8 @@
 import socket
-from Seq import Seq
+from Seqp3 import Seq
 
 PORT = 8046
-IP = '212.128.253.114'
+IP = '127.0.0.1'
 MAX_CLIENTS = 5
 
 def operations(s, cs):
@@ -25,9 +25,10 @@ def operations(s, cs):
     if result == 'ALIVE' or result == 'ERROR':
         return result
     else:
-        methods= {'len':seq.len(), 'complement':seq.complement(), 'reverse':seq.reverse(), 'countA':seq.count('A'),
-                        'countC':seq.count('C'), 'countT':seq.count('T'), 'countG':seq.count('G'), 'percA':seq.perc('A'),
-                        'percC':seq.perc('C'),'percT':seq.perc('T'),'percG':seq.perc('G')}
+        methods = {'len': seq.len(), 'complement': seq.complement().strbases, 'reverse': seq.reverse().strbases,
+                   'countA': seq.count('A'), 'countC': seq.count('C'), 'countT': seq.count('T'),
+                   'countG': seq.count('G'), 'percA': seq.perc('A'), 'percC': seq.perc('C'),'percT': seq.perc('T'),
+                   'percG': seq.perc('G')}
 
         out: str = '{}\nThe sequence is: {}\n'.format(result, seq.strbases)
         for i in ops:
@@ -52,4 +53,4 @@ while True:
     info = str.encode(msg)
     client_socket.send(info)
     print('Message sent')
-client_socket.close()
+    client_socket.close()

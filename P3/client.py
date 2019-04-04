@@ -1,13 +1,12 @@
 import socket
 
 port = 8046
-IP = "212.128.253.114"
+IP = "127.0.0.1"
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((IP, port))
-msg = """
-"""
+msg = """AATGTCGTGTCGT\nlen\ncomplement\ncountA\npercC\nreverse"""
 
 s.send(msg.encode())
 
