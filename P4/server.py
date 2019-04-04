@@ -2,15 +2,13 @@ import socket
 import termcolor
 
 
-IP = "212.128.253.114"
+IP = "127.0.0.1"
 PORT = 8080
 MAX_OPEN_REQUESTS = 5
 
 
 def process_client(cs):
 
-
-    # Read client message. Decode it as a string
     msg = cs.recv(2048).decode("utf-8")
 
     print()
@@ -18,21 +16,17 @@ def process_client(cs):
     termcolor.cprint(msg, 'green')
 
     if msg.startswith("GET /blue"):
-        f = open("blue.html", "r")
-        content = f.read()
-        f.close()
+        with open("blue.html", "r") as file:
+            content = file.read()
     elif msg.startswith("GET /pink"):
-        f = open("pink.html", "r")
-        content = f.read()
-        f.close()
+        with open("pink.html", "r") as file:
+            content = file.read()
     elif msg.startswith("GET /index") or msg.startswith("GET /"):
-        f = open("index.html", "r")
-        content = f.read()
-        f.close()
+        with open("index.html", "r") as file:
+            content = file.read()
     else:
-        f = open("error.html", "r")
-        content = f.read()
-        f.close()
+        with open("error.html", "r") as file:
+            content = file.read()
 
     status_line = "HTTP/1.1 200 ok\r\n"
 
@@ -68,4 +62,4 @@ while True:
     print("Attending connections from client: {}".format(address))
 
     # Service the client
-process_client(clientsocket)
+    process_client(clientsocket)
