@@ -36,7 +36,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             with open('pink.html', 'r') as f:
                 contents = f.read()
 
-
         else:
             with open('error.html', 'r') as f:
                 contents = f.read()
@@ -75,7 +74,7 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
         httpd.serve_forever()
     except KeyboardInterrupt:
         print("")
-        print("Stoped by the user")
+        print("Stopped by the user")
         httpd.server_close()
 
 print("")
