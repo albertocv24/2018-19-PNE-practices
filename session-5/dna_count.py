@@ -13,6 +13,8 @@ class Gene(Seq):
        All the objects of class Gene will
        inheritance the methods from Seq Class"""
 
+
+#this are the sequences
 s1 = Gene("ATTCGATCC")
 s2 = Seq("AAAGG")
 
