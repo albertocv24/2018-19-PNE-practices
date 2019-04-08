@@ -2,12 +2,12 @@ import socket
 import termcolor
 
 # Change this IP to yours!!!!!
-IP = "212.128.253.80"
-PORT = 8081
+IP = "127.0.0.1"
+PORT = 8000
 MAX_OPEN_REQUESTS = 5
 
 
-def process_client(cs, response_msg=None):
+def process_client(cs):
     """Process the client request.
     Parameters:  cs: socket for communicating with the client"""
 
@@ -19,16 +19,24 @@ def process_client(cs, response_msg=None):
     print("Request message: ")
     termcolor.cprint(msg, 'green')
 
-    with open('index.html', 'r') as i:
-        content = ''
-        for rows in i:
-            content += rows
+    content = """<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Green Server</title>
+  </head>
+  <body style="background-color: lightgreen;">
+    <h1>ALBERTO CABALLERO VINUESA</h1>
+    <p>HELLO WORLD</p>
+  </body>
+</html>\r\n"""
 
-    status_line = 'HTTP/1.1 200 OK\r\n'
-    header = 'Content-Type: text/html\r\n'
-    header += 'Content-Length: {}\r\n'.format(len(str.encode(content)))
+    status_line = "HTTP/1.1 200 ok\r\n"
 
-    response_msg = status_line + header + '\r\n' + content
+    header = "Content-Type: text/html\r\n"
+    header += "Content-Length: {}\r\n".format(len(str.encode(content)))
+
+    response_msg = status_line + header + "\r\n" + content
 
     cs.send(str.encode(response_msg))
 
@@ -60,4 +68,4 @@ while True:
     print("Attending connections from client: {}".format(address))
 
     # Service the client
-process_client(clientsocket)
+    process_client(clientsocket)
