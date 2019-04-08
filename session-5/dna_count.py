@@ -1,7 +1,7 @@
 class Seq:
     """A class for representing sequences"""
     def __init__(self, strbases):
-        print("New sequence created!")
+        print("New sequence is already created!")
 
         self.strbases = strbases
 
@@ -22,9 +22,9 @@ str2 = s2.strbases
 l1 = s1.len()
 l2 = s2.len()
 
-print("Sequence 1: {}".format(str1))
-print("Length: {}".format(l1))
-print("Seuqnece 2: {}".format(str2))
-print("Length: ·{}".format(l2))
+print("First sequence: {}".format(str1))
+print("Length 1: {}".format(l1))
+print("Second sequence: {}".format(str2))
+print("Length 2: ·{}".format(l2))
 
 print("the end")
