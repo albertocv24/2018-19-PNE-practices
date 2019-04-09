@@ -2,7 +2,9 @@ import http.server
 import socketserver
 import termcolor
 
-PORT = 8001;
+PORT = 8001
+
+
 
 class TestHandler(http.server.BaseHTTPRequestHandler):
 
@@ -22,6 +24,8 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         # -- SENDING THE BODY OF THE RESPONSE MESSAGE
         self.wfile.write(str.encode(contents))
+
+
 
 # -- MAIN PROGRAM
 with socketserver.ForkingTCPServer(("",PORT),TestHandler) as httpd:
