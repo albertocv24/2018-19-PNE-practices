@@ -3,12 +3,15 @@ import socketserver
 import termcolor
 
 
-PORT = 8001
+PORT = 8006
 
 
 class TestHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
+
+
+
 
         termcolor.cprint(self.requestline, 'green')
 
