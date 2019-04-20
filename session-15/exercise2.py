@@ -10,10 +10,11 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
 
-
-
-
         termcolor.cprint(self.requestline, 'green')
+
+
+
+
 
         if self.path == '/':
             f = open("form2.html", 'r')
@@ -32,6 +33,8 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             f = open('error.html','r')
             contents = f.read()
             f.close()
+
+
 
 
         # Generating the response message
